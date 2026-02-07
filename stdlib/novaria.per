@@ -1,0 +1,10 @@
+package novaria
+
+pub fn Open(path string) int {
+    var fd int
+    asm {
+        syscall 2
+        store $(fd)
+    }
+    return fd
+}
